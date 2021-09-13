@@ -4,4 +4,4 @@ Para ver | React Native
 
 * O usuário será capaz de gerenciar os filmes que já assistiu e os que vai assistir, sendo capaz também de verificar informações sobre os filmes.  
 
-* Como extra tem como planejamento uma autenticação com Firebase.
+* Como extra tem como planejamento um Login pelo Google por meio de firebase
