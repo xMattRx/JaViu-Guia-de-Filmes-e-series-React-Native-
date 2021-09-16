@@ -4,15 +4,13 @@
 import React from 'react'
 import { View, Text, StatusBar } from "react-native";
 import { colors, textColor } from './src/assets/colors';
-import HomeScreen from './src/views/HomeScreen';
+import HomeScreen from './src/views/Home/HomeScreen';
 
 export default props => {
   return (
     <>
-      <StatusBar barStyle={'dark-content'} backgroundColor={textColor.white} />
-      <View style={{ flex: 1, backgroundColor: textColor.white }}>
-        <HomeScreen />
-      </View>
+      <StatusBar barStyle='light-content' backgroundColor='#d53b47' />
+      <HomeScreen />
     </>
   )
 }
