@@ -1,4 +1,3 @@
-Para ver | React Native
 Pokedex | React Native
 
 * Aplicação desenvolvida em React Native com objetivo de aprofundar nos aspectos da tecnologia, sendo eles Rotas, chamada e manipulação de API, estilização, estados e ciclo de vida de componentes...
