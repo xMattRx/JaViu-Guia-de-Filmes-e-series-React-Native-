@@ -2,29 +2,43 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Text } from 'react-native'
+import styled from 'styled-components'
 
-export default props => {
+const ContainerStats = styled.View`
+flex-direction: row; 
+margin-top: 18px; 
+justify-content: space-around;
+width: 100%;
+`
+const Name = styled.Text`
+color: #CCC;
+`
+const BackgroundState = styled.View`
+width: 300px;
+background-color: #FFF;
+border-Radius: 100px;
+`
+const Color = styled.View`
+width: ${props => props.base};
+background-color: ${props => props.color};
+border-Radius: 100px;
+`
+const Base = styled.Text`
+text-align: right; 
+margin-right: 12px;
+color: #FFF;
+`
+
+export default ({ base, color, name }) => {
     return (
-        <View style={{ flexDirection: 'row', marginVertical: 20, justifyContent: 'space-around', width: '100%' }}>
-            <Text style={{ color: '#CCC' }}>{props.name}</Text>
-
-            <View style={{
-                width: 300,
-                backgroundColor: '#FFF',
-                borderRadius: 100,
-            }}>
-                <View style={{
-                    width: 299,
-                    backgroundColor: '#FF0000',
-                    borderRadius: 100,
-                }} >
-                    <Text style={{ textAlign: 'right' }}>dsads</Text>
-                </View>
-
-            </View>
-
-
-        </View>
+        <ContainerStats>
+            <Name>{name}</Name>
+            <BackgroundState>
+                <Color color={color} base={base}>
+                    <Base>{`${base} /300`}</Base >
+                </Color>
+            </BackgroundState >
+        </ContainerStats >
     )
 }

@@ -5,23 +5,24 @@ import { View, Text } from 'react-native'
 import Colors from '../CardPokemon/Colors'
 
 export default ({ types }) => {
-    console.log('Types:' + types)
+    const size = types.length
     return (
         <View style={{
             flexDirection: 'row',
             width: 310,
-            justifyContent: 'space-between',
+            justifyContent: size > 1 ? 'space-around' : 'center'
         }}>
-            {types.map((type, index) => {
-                return <View style={{
-                    paddingVertical: 5,
-                    paddingHorizontal: 50,
-                    borderRadius: 30,
-                    backgroundColor: Colors[type.type.name]
-                }}>
-                    <Text style={{ color: '#FFF', fontSize: 17, fontWeight: 'bold' }}>{type.type.name}</Text>
-                </View>
-            })
+            {
+                types.map((type, index) => {
+                    return <View key={index} style={{
+                        paddingVertical: 5,
+                        paddingHorizontal: 50,
+                        borderRadius: 30,
+                        backgroundColor: Colors[type.type.name]
+                    }}>
+                        <Text style={{ color: '#FFF', fontSize: 17, fontWeight: 'bold' }}>{type.type.name}</Text>
+                    </View>
+                })
             }
         </View >
     )
