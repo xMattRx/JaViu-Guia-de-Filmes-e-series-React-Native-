@@ -1,10 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from 'react'
-import { Image, ImageBackground, ScrollView, StyleSheet, FlatList, Text, View } from 'react-native'
+import { ScrollView, StatusBar, TouchableOpacity, Text, View } from 'react-native'
 import axios from 'axios'
 import { styles } from './Style';
 import CardPokemon from '../../components/CardPokemon';
+import { useNavigation } from '@react-navigation/native'
+
 
 const HomeScreen = () => {
     const [url] = useState(
@@ -40,11 +42,14 @@ const HomeScreen = () => {
         return response;
     };
 
+    const navigation = useNavigation()
+
     useEffect(catchPokemons, []);
 
     return (
-        <View style={styles.container}>
-            <>
+        <>
+            <StatusBar barStyle='light-content' backgroundColor='#d53b47' />
+            <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.textHeader}>Pokedex</Text>
                 </View>
@@ -52,13 +57,18 @@ const HomeScreen = () => {
                     <View style={styles.list}>
                         {
                             pokemon.map((item, index) => {
-                                return <CardPokemon key={index} pokemon={item} />
+                                return <TouchableOpacity key={index} onPress={() => navigation.push('Details', {
+                                    item,
+                                })}
+                                >
+                                    <CardPokemon pokemon={item} />
+                                </TouchableOpacity>
                             })
                         }
                     </View>
                 </ScrollView>
-            </>
-        </View >
+            </View>
+        </ >
     )
 }
 
