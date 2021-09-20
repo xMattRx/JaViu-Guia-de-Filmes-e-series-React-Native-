@@ -6,9 +6,9 @@ import Types from '../../components/Types'
 
 const Title = styled.Text`
 color: #FFF; 
-font-size: 22; 
-margin-top: 30;
-margin-bottom: 30; 
+font-size: 22px; 
+margin-top: 30px;
+margin-bottom: 30px; 
 font-weight: bold;
 `
 

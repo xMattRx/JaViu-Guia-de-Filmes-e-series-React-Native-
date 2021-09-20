@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { useNavigation } from '@react-navigation/native'
 
 const PokemonBackground = styled.View`
-height: 200;
+height: 200px;
 border-Bottom-Left-Radius: 50px;
 border-Bottom-Right-Radius: 50px;
 flex-Direction: column;
@@ -32,13 +32,13 @@ width: 30px;
 `
 
 const Pokedex = styled.Text`
- font-size: 18; 
+ font-size: 18px; 
  color: white;
 `
 const Id = styled.Text`
-font-size: 18; 
+font-size: 18px; 
 color: white; 
-padding-Right: 10;
+padding-Right: 10px;
 `
 const ContainerImage = styled.View`
 flex: 1;

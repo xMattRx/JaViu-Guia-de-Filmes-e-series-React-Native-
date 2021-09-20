@@ -1,7 +1,5 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
-import { styles } from './style'
 import styled from 'styled-components'
 import Colors from './Colors'
 
@@ -12,17 +10,29 @@ margin: 11px;
 background-color: ${props => Colors[props.color]};
 `
 
+const Img = styled.Image`
+height: 150px;
+width: 150px;
+`
+const Name = styled.Text`
+text-Align: center;
+color: #FFF;
+font-Weight: bold;
+font-family: 'Lato-Regular';
+`
+
+
 export default ({ pokemon }) => {
-    let color = pokemon.data.types[0].type.name;
+    console.log(pokemon)
+    let color = pokemon.types[0].type.name;
     return (
         <Container color={color}>
-            <Image
-                style={styles.image}
+            <Img
                 source={{
-                    uri: `${pokemon.data.sprites.other['official-artwork'].front_default}`,
+                    uri: `${pokemon.sprites.other['official-artwork'].front_default}`,
                 }}
             />
-            <Text style={styles.name}>{pokemon.data.name}</Text>
+            <Name>{pokemon.name}</Name>
         </Container>
     )
 }

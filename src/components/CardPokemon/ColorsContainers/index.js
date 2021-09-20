@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
 const Colors = {
-    fire: "#fc6c6c",
+    fire: "#FB6C6C",
     grass: "#47ceae",
     electric: "#f4dc26",
-    water: "#73bdfa",
+    water: "#0B5CAD",
     ground: "#8A5808",
     rock: "#725D3B",
     fairy: "#BB63A1",

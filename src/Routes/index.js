@@ -10,7 +10,7 @@ import Details from '../views/Details';
 const Stack = createStackNavigator();
 const Routes = () => (
     <NavigationContainer>
-        <Stack.Navigator screenOptions={{
+        <Stack.Navigator independent={true} screenOptions={{
             headerShown: false
         }} initialRouteName="Home">
             <Stack.Screen name="Home" component={Home} />

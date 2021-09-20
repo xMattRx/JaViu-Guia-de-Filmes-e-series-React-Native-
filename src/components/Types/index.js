@@ -3,15 +3,19 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import Colors from '../CardPokemon/Colors'
+import styled from 'styled-components'
+
+const Container = styled.View`
+flex-Direction: row;
+width: 310px;
+justify-content: ${props => props.size > 1 ? 'space-around' : 'center'};
+`
+
 
 export default ({ types }) => {
     const size = types.length
     return (
-        <View style={{
-            flexDirection: 'row',
-            width: 310,
-            justifyContent: size > 1 ? 'space-around' : 'center'
-        }}>
+        <Container size={size}>
             {
                 types.map((type, index) => {
                     return <View key={index} style={{
@@ -24,6 +28,6 @@ export default ({ types }) => {
                     </View>
                 })
             }
-        </View >
+        </Container >
     )
 }

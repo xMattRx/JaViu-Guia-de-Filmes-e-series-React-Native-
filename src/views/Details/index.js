@@ -32,16 +32,14 @@ margin-top: 30px;
 `
 const BaseStats = styled.Text`
 color: #FFF; 
-font-size: 20; 
+font-size: 20px; 
 font-weight: bold;
-margin-top: 30;
+margin-top: 30px;
 `
 
 export default ({ route }) => {
-
-    const pokemon = { ...route.params.item.data }
+    const pokemon = { ...route.params.item }
     const color = Colors[pokemon.types[0].type.name]
-    console.log(pokemon)
 
     return (
 

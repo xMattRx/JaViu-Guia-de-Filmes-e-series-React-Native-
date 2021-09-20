@@ -20,7 +20,7 @@ background-color: #FFF;
 border-Radius: 100px;
 `
 const Color = styled.View`
-width: ${props => props.base};
+width: ${props => props.base}px;
 background-color: ${props => props.color};
 border-Radius: 100px;
 `
