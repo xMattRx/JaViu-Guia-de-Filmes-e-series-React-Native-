@@ -4,6 +4,6 @@ Pokedex | React Native
 
 * O usuário será capaz de visualizar listas sobre os pokemons.
 
-* Pode verificar informações detalhadas sobre os pokemons e favorita-los.  
+* Pode verificar informações detalhadas sobre os pokemons e pesquisar seus pokemons favoritos.  
 
-* Como extra tem como planejamento um Login pelo Google por meio de firebase
+* Como extra tem como planejamento um Login pelo Google por meio de firebase.
