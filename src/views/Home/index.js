@@ -35,7 +35,7 @@ const List = styled.View`
 
 flex-Direction: ${props => props.search ? 'row' : 'row'};
 width: 100%;
-height: 100000px;
+height: 100%;
 background-color: #2e292d;
 flex-Wrap: wrap;
 justify-Content: center;
@@ -55,6 +55,7 @@ const HomeScreen = () => {
             .get(path)
             .then(async (response) => {
                 let array = await mapPokemons(response.data.results);
+                console.log(array)
                 setPokemon(array);
             })
             .catch((err) => {
@@ -101,29 +102,35 @@ const HomeScreen = () => {
                         setBooleanSearch(false)
                     }}
                 />
-                <Scroll>
-                    <List search={booleanSearch}>
-                        {
-                            (booleanSearch === false && search === '') ?
 
-                                (pokemon.map((item, index) => {
-                                    return <TouchableOpacity key={index} onPress={() => navigation.push('Details', {
+                <List search={booleanSearch}>
+                    {
+                        (booleanSearch === false && search === '') ?
+
+                            (<FlatList
+                                data={pokemon}
+                                renderItem={({ item }) => {
+                                    return <TouchableOpacity onPress={() => navigation.push('Details', {
                                         item,
                                     })}
                                     >
                                         <CardPokemon pokemon={item} />
                                     </TouchableOpacity>
-                                })) : (pokemon.filter((element) => framgment(element)).map((item, index) => {
-                                    return <TouchableOpacity key={index} onPress={() => navigation.push('Details', {
+                                }}
+                            />
+                            ) : (<FlatList
+                                data={pokemon.filter((element) => framgment(element))}
+                                renderItem={({ item }) => {
+                                    return <TouchableOpacity onPress={() => navigation.push('Details', {
                                         item,
                                     })}
                                     >
                                         <CardPokemon pokemon={item} />
                                     </TouchableOpacity>
-                                }))
-                        }
-                    </List>
-                </Scroll>
+                                }}
+                            />)
+                    }
+                </List>
             </Container>
         </ >
     )

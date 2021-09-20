@@ -7,6 +7,8 @@ const Container = styled.View`
 border-Radius: 20px;
 padding: 12px;
 margin: 11px;
+justify-content: center;
+align-items: center;
 background-color: ${props => Colors[props.color]};
 `
 

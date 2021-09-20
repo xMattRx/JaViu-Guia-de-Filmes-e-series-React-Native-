@@ -13,7 +13,6 @@ font-weight: bold;
 `
 
 export default ({ pokemon }) => {
-    console.log("pokemon: " + pokemon)
     return (
         <View style={{ alignItems: 'center' }}>
             <Title>{pokemon.name}</Title>
