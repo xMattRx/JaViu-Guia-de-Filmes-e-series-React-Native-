@@ -3,13 +3,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import Colors from '../CardPokemon/Colors'
-import styled from 'styled-components'
-
-const Container = styled.View`
-flex-Direction: row;
-width: 310px;
-justify-content: ${props => props.size > 1 ? 'space-around' : 'center'};
-`
+import { Container } from './style'
 
 
 export default ({ types }) => {

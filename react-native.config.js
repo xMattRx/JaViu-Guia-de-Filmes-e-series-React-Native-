@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 module.export = {
     project: {
         ios: {},

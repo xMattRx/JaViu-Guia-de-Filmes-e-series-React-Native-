@@ -44,7 +44,7 @@ align-items: center;
 
 
 const HomeScreen = () => {
-    const url = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
+    const url = "https://pokeapi.co/api/v2/pokemon?limit=50&offset=0";
     const [pokemon, setPokemon] = useState([]);
     const [search, setSearch] = useState('');
     const [booleanSearch, setBooleanSearch] = useState(false);
@@ -55,7 +55,6 @@ const HomeScreen = () => {
             .get(path)
             .then(async (response) => {
                 let array = await mapPokemons(response.data.results);
-                console.log(array)
                 setPokemon(array);
             })
             .catch((err) => {

@@ -1,16 +1,9 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { View, Text } from 'react-native'
-import styled from 'styled-components'
+import { View } from 'react-native'
 import Types from '../../components/Types'
+import { Title, Container } from './style'
 
-const Title = styled.Text`
-color: #FFF; 
-font-size: 22px; 
-margin-top: 30px;
-margin-bottom: 30px; 
-font-weight: bold;
-`
 
 export default ({ pokemon }) => {
     return (
