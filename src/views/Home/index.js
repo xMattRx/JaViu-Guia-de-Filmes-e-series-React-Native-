@@ -1,47 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from 'react'
-import { StatusBar, TouchableOpacity, FlatList } from 'react-native'
+import { StatusBar, TouchableOpacity, FlatList, Text } from 'react-native'
 import axios from 'axios'
 import CardPokemon from '../../components/CardPokemon';
 import { useNavigation } from '@react-navigation/native'
 import { TextInput } from 'react-native-gesture-handler';
-import styled from 'styled-components'
-
-const Container = styled.View`
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-`
-const Header = styled.View`
-    background-Color: #d53b47;
-    height: 50px;
-    width: 100%;
-    justify-content: center;
-    padding-Left: 30px;
-    padding-Bottom: 10px;
-`
-const TextHeader = styled.Text`
-    color: #FFF;
-    font-Weight: bold;
-    font-Size: 23px;
-`
-
-const Scroll = styled.ScrollView`
-    flex: 1;
-    width: 100%;
-`
-const List = styled.View`
-
-flex-Direction: ${props => props.search ? 'row' : 'row'};
-width: 100%;
-height: 100%;
-background-color: #2e292d;
-flex-Wrap: wrap;
-justify-Content: center;
-align-items: center;
-`
-
+import { Container, Header, TextHeader, List, Closer } from './style'
 
 const HomeScreen = () => {
     const url = "https://pokeapi.co/api/v2/pokemon?limit=50&offset=0";
@@ -101,7 +66,11 @@ const HomeScreen = () => {
                         setBooleanSearch(false)
                     }}
                 />
-
+                {search.length > 0 &&
+                    <Closer onPress={() => {
+                        setSearch('')
+                    }}>X</Closer>
+                }
                 <List search={booleanSearch}>
                     {
                         (booleanSearch === false && search === '') ?

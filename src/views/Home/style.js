@@ -25,7 +25,6 @@ export const Scroll = styled.ScrollView`
     width: 100%;
 `
 export const List = styled.View`
-
 flex-Direction: ${props => props.search ? 'row' : 'row'};
 width: 100%;
 height: 100%;
@@ -33,4 +32,10 @@ background-color: #2e292d;
 flex-Wrap: wrap;
 justify-Content: center;
 align-items: center;
+`
+export const Closer = styled.Text`
+color: #CCC;
+position: absolute;
+right: 30px;
+top: 15px;
 `
