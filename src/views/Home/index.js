@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable prettier/prettier */
-import React, { useState, useEffect } from 'react'
-import { StatusBar, TouchableOpacity, FlatList, Text } from 'react-native'
-import axios from 'axios'
-import CardPokemon from '../../components/CardPokemon';
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { FlatList, StatusBar, TouchableOpacity } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-import { Container, Header, TextHeader, List, Closer } from './style'
+import CardPokemon from '../../components/CardPokemon';
+import { Closer, Container, Header, List, TextHeader } from './style';
 
 const HomeScreen = () => {
     const url = "https://pokeapi.co/api/v2/pokemon?limit=50&offset=0";
@@ -39,7 +39,10 @@ const HomeScreen = () => {
     };
 
     const framgment = (element) => {
-        return element.name === search
+        let max = search.length;
+        let writed = search.substring(0, max);
+        let elementName = element.name.substring(0, max)
+        return writed === elementName
     }
 
     const navigation = useNavigation()
