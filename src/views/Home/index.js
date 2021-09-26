@@ -40,9 +40,9 @@ const HomeScreen = () => {
 
     const framgment = (element) => {
         let max = search.length;
-        let writed = search.substring(0, max);
+        let written = search.substring(0, max);
         let elementName = element.name.substring(0, max)
-        return writed === elementName
+        return written.toLowerCase() === elementName
     }
 
     const navigation = useNavigation()
