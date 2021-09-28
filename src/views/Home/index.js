@@ -30,8 +30,8 @@ const HomeScreen = () => {
     const mapPokemons = async (props) => {
         let response = await Promise.all(
             props.map(async (pokemonData) => {
-                let registroPokemon = await axios.get(pokemonData.url);
-                let registerPokemon = registroPokemon.data;
+                let registerPokemon2 = await axios.get(pokemonData.url);
+                let registerPokemon = registerPokemon2.data;
                 return registerPokemon;
             })
         );
